@@ -23,6 +23,10 @@ set_property(TARGET s2geo PROPERTY INSTALL_RPATH_USE_LINK_PATH TRUE)
 #include_directories(${GFLAGS_INCLUDE_DIR})
 
 file(GLOB InstallGlob geometry/*.h)
+file(GLOB BaseGlob geometry/base/*.h)
+file(GLOB UtilMathGlob geometry/util/math/*.h)
 
 install(FILES ${InstallGlob} DESTINATION include/s2geo)
+install(FILES ${BaseGlob} DESTINATION include/s2geo/base)
+install(FILES ${UtilMathGlob} DESTINATION include/util/math)
 install(TARGETS s2geo DESTINATION lib)
