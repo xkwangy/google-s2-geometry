@@ -18,10 +18,6 @@ add_library(s2geo STATIC ${S2Glob})
 # more info see http://www.cmake.org/Wiki/CMake_RPATH_handling
 set_property(TARGET s2geo PROPERTY INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-
-#find_package(crypto)
-#include_directories(${GFLAGS_INCLUDE_DIR})
-
 file(GLOB InstallGlob geometry/*.h)
 file(GLOB BaseGlob geometry/base/*.h)
 file(GLOB UtilMathGlob geometry/util/math/*.h)
