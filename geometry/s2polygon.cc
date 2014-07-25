@@ -123,7 +123,7 @@ template<> struct hash<S2PointPair> {
 bool S2Polygon::IsValid(const vector<S2Loop*>& loops) {
   // If a loop contains an edge AB, then no other loop may contain AB or BA.
   if (loops.size() > 1) {
-    hash_map<S2PointPair, pair<int, int> > edges;
+    unordered_map<S2PointPair, pair<int, int> > edges;
     for (int i = 0; i < loops.size(); ++i) {
       S2Loop* lp = loops[i];
       for (int j = 0; j < lp->num_vertices(); ++j) {

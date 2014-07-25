@@ -5,7 +5,7 @@ include(CheckCXXCompilerFlag)
 include(FindPackageHandleStandardArgs)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-ADD_DEFINITIONS (-DNDEBUG )
+ADD_DEFINITIONS (-Wno-deprecated-declarations -DNDEBUG)
 
 include_directories(geometry)
 include_directories(geometry/util/endian)
