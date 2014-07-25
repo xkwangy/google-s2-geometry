@@ -235,7 +235,10 @@ bool S2Polygon::ContainsChild(S2Loop* a, S2Loop* b, LoopMap const& loop_map) {
 }
 
 void S2Polygon::Init(vector<S2Loop*>* loops) {
-  if (FLAGS_s2debug) CHECK(IsValid(*loops));
+  if (FLAGS_s2debug)
+  {
+      CHECK(IsValid(*loops));
+  }
   DCHECK(loops_.empty());
   loops_.swap(*loops);
 
@@ -456,7 +459,10 @@ bool S2Polygon::Contains(S2Cell const& cell) const {
   S2Loop cell_loop(cell);
   S2Polygon cell_poly(&cell_loop);
   bool contains = Contains(&cell_poly);
-  if (contains) DCHECK(Contains(cell.GetCenter()));
+  if (contains)
+  {
+      DCHECK(Contains(cell.GetCenter()));
+  }
   return contains;
 }
 
