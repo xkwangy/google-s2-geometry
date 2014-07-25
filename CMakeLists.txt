@@ -5,7 +5,7 @@ include(CheckCXXCompilerFlag)
 include(FindPackageHandleStandardArgs)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-ADD_DEFINITIONS ( -DS2_USE_EXACTFLOAT -DARCH_K8 -Wno-deprecated -DNDEBUG )
+ADD_DEFINITIONS ( -DS2_USE_EXACTFLOAT -Wno-deprecated -DNDEBUG )
 
 include_directories(geometry)
 include_directories(geometry/util/endian)
