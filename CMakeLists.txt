@@ -11,7 +11,7 @@ message("OpenSSL include dir: ${OPENSSL_INCLUDE_DIR}")
 message("OpenSSL libraries: ${OPENSSL_LIBRARIES}")
 
 
-ADD_DEFINITIONS (-Wno-deprecated-declarations -DNDEBUG)
+ADD_DEFINITIONS (-Wno-deprecated-declarations -DNDEBUG -std=c++11)
 
 include_directories(geometry)
 include_directories(geometry/util/endian)
