@@ -6,12 +6,8 @@ using std::max;
 using std::swap;
 using std::reverse;
 
-#ifdef __GNUC__
-#include <ext/hash_map>
-#else
-#include <hash_map>
-#endif
-using __gnu_cxx::hash_map;
+#include <unordered_map>
+using std::unordered_map;
 
 #include <set>
 using std::set;
@@ -111,12 +107,8 @@ S2Polygon::~S2Polygon() {
 
 typedef pair<S2Point, S2Point> S2PointPair;
 
-#ifdef __GNUC__
-#include <ext/hash_set>
-#else
-#include <hash_set>
-#endif
-namespace __gnu_cxx {
+#include <unordered_set>
+namespace std {
 
 template<> struct hash<S2PointPair> {
   size_t operator()(S2PointPair const& p) const {
@@ -125,7 +117,7 @@ template<> struct hash<S2PointPair> {
   }
 };
 
-}  // namespace __gnu_cxx
+}  // namespace std
 
 
 bool S2Polygon::IsValid(const vector<S2Loop*>& loops) {
